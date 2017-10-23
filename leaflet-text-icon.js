@@ -4,6 +4,9 @@
 		options: L.extend({
 			className: 'leaflet-div-icon',
 			getIconUrl: function(color) {
+				if (this.iconUrl) {
+					return this.iconUrl;
+				}
 				//if (L.Browser.retina) - use 2x version
 				return '/images/marker-hole-'+ (color || 'blue') +'.svg' 
 			}
